@@ -1,0 +1,21 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark-gray: #121212;
+
+  --spasing-medium: 20px;
+
+  --border-radius-small: 3px;
+}
+
+body {
+  background-color: var(--color-dark-gray);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
