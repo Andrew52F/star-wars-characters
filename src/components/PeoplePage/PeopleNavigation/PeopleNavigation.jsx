@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import PropTypes, { string } from 'prop-types';
 
 import { SWAPI_PEOPLE,  SWAPI_PARAM_PAGE } from '@constants/api';
+import UiButton from '@components/UI/UiButton';
 
 import styles from './PeopleNavigation.module.css';
 
@@ -12,21 +14,31 @@ const PeopleNavigation = ({ getResource, prevPage, nextPage, currPageId}) => {
 
 
   return (
-    <div>
-      <Link className={styles.button} to={`/${SWAPI_PEOPLE+SWAPI_PARAM_PAGE}${currPageId-1}`}>
-        <button 
-        onClick={handleClickPrev}
-        disabled={!prevPage}
-        >Previous</button>
+    <div className={styles.container}>
+      <Link className={styles.buttons} to={`/${SWAPI_PEOPLE+SWAPI_PARAM_PAGE}${currPageId-1}`}>
+        <UiButton
+          onClick={handleClickPrev}
+          text={'Previous'}
+          disabled={!prevPage}
+        />
       </Link>
-      <Link className={styles.button} to={`/${SWAPI_PEOPLE+SWAPI_PARAM_PAGE}${currPageId+1}`}>
-        <button 
-        onClick={handleClickNext}
-        disabled={!nextPage}
-        >Next</button>
+      <Link className={styles.buttons} to={`/${SWAPI_PEOPLE+SWAPI_PARAM_PAGE}${currPageId+1}`}>
+      <UiButton
+          onClick={handleClickNext}
+          text={'Next'}
+          disabled={!nextPage}
+        />
       </Link>
     </div>
   )
 }
 
-export default PeopleNavigation;
+
+PeopleNavigation.propTypes = {
+  getResource: PropTypes.func,
+  prevPage: PropTypes.string,
+  nextPage: PropTypes.string,
+  currPageId: PropTypes.number
+}
+
+export default PeopleNavigation; 

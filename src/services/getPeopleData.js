@@ -9,4 +9,4 @@ export const getPeoplePageId = (url) => {
   const startPos = url.lastIndexOf(PEOPLE_LIST);
   const id = url.slice(startPos+PEOPLE_LIST.length, url.length);
   return Number(id);
-} 
+}  
