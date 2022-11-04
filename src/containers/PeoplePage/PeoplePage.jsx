@@ -1,31 +1,63 @@
 import { useEffect, useState } from 'react';
- // import styles from './PeoplePage.module.css';
-import getApiData from '../../utils/network'
-import { PEOPLE_LIST } from '../../constants/api';
-import { getPersonId, getPersonImgUrl } from '../../services/getPeopleData';
+import PropTypes from 'prop-types';
 
-import PeopleList from '../../components/PeoplePage/PeopleList';
+import { withErrorApi } from '@components/hocs/withErrorApi';
 
-const PeoplePage = () => {
+import PeopleList from '@components/PeoplePage/PeopleList';
+import PeopleNavigation from '@components/PeoplePage/PeopleNavigation';
+
+import { PEOPLE_LIST } from '@constants/api';
+import getApiData from '@utils/network'
+import { getPersonId, getPersonImgUrl, getPeoplePageId } from '@services/getPeopleData';
+import { useQueryParams } from '@hooks/useQueryParams';
+
+import styles from './PeoplePage.module.css';
+
+const PeoplePage = ({ setApiError }) => {
   const [people, setPeople] = useState(null);
+  const [prevPage, setPrevPage] = useState(null);
+  const [nextPage, setNextPage] = useState(null);
+  const [currPageId, setCurrPageId] = useState(1);
+
+  const query = useQueryParams();
+  const queryPage = query.get('page');
+
   const getResource = async (url) => {
     const data = await getApiData(url)
-    setPeople(data.results.map(({name, url}) =>{
-      const id = getPersonId(url);
-      const imgUrl = getPersonImgUrl(id)
-      return {id, name, imgUrl}
-    }))
-  }
+    if (data) {
+      setPeople(data.results.map(({name, url}) =>{
+        const id = getPersonId(url);
+        const imgUrl = getPersonImgUrl(id)
+        return {id, name, imgUrl}
+      }))
+      setPrevPage(data.previous);
+      setNextPage(data.next)
+      setCurrPageId(getPeoplePageId(url))
+    } else {
+      setApiError(true);
+    }
+    
+  } 
   useEffect(() => {
-    getResource(PEOPLE_LIST)
+    getResource(PEOPLE_LIST+queryPage)
   }, [])
   return (
-    <>
-    <ul>
-    {people && <PeopleList people={people} />}
-    </ul>
-    </>
+      <>
+      <PeopleNavigation 
+        getResource={getResource}
+        prevPage={prevPage}
+        nextPage={nextPage}
+        currPageId={currPageId}
+      />
+      <ul>
+        {people && <PeopleList people={people} />}
+      </ul>
+      </>
   )
 }
 
-export default PeoplePage; 
+PeoplePage.propTypes = {
+  setApiError: PropTypes.func
+}
+
+export default withErrorApi(PeoplePage); 

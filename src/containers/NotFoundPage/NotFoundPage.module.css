@@ -1,0 +1,15 @@
+.message {
+  font-size: 120px;
+  color: var(--color-yellow);
+  text-shadow: var(--text-shadow-yellow);
+  margin: 0;
+  text-align: center;
+  margin-top: 100px;
+}
+.text {
+  text-align: center;
+  margin-top: var(--spacing-large);
+  font-size: var(--font-size-subheader);
+  color: var(--color-white);
+  text-shadow: var(--text-shadow-blue);
+}
