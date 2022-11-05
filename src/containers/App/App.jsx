@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route}  from "react-router-dom";
 import PeoplePage from '@containers/PeoplePage';
 import HomePage from "@containers/HomePage";
 import NotFoundPage from "@containers/NotFoundPage";
+import PersonPage from "@containers/PersonPage";
 
 import Header from "@components/Header";
 
@@ -18,7 +19,7 @@ const App = () => {
         <Routes>
           <Route path={routes.home} element={<HomePage />} />
           <Route path={routes.people} element={<PeoplePage />} />
-          <Route path={'/p'} element={<p>Прив</p>} />
+          <Route path={routes.person} element={<PersonPage />} />
           <Route path={routes.notFound} element={<NotFoundPage />} />
         </Routes>
       </div>
