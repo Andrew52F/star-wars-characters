@@ -7,7 +7,7 @@ import PeopleList from '@components/PeoplePage/PeopleList';
 import PeopleNavigation from '@components/PeoplePage/PeopleNavigation';
 
 import { PEOPLE_LIST } from '@constants/api';
-import getApiData from '@utils/network'
+import { getApiData } from '@utils/network'
 import { getPersonId, getPersonImgUrl, getPeoplePageId } from '@services/getPeopleData';
 import { useQueryParams } from '@hooks/useQueryParams';
 

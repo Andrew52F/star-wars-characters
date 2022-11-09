@@ -1,5 +1,5 @@
 import axios from "axios";
-const getApiData = async (url) => {
+export const getApiData = async (url) => {
   try {
     const response = await axios.get(url);
     if (response.status !== 200) {
@@ -11,4 +11,11 @@ const getApiData = async (url) => {
     console.log(e)
   }
 }
-export default getApiData;
+
+export const fetchArrayOfUrls = async (urls) => await Promise.all(urls.map(url => {
+    return fetch(url).then(res => res.json())
+  }))
+
+
+
+
