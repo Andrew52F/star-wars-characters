@@ -3,6 +3,7 @@ import PeoplePage from '@containers/PeoplePage';
 import HomePage from "@containers/HomePage";
 import NotFoundPage from "@containers/NotFoundPage";
 import PersonPage from "@containers/PersonPage";
+import FavoritesPage from "@containers/FavoritesPage";
 
 import Header from "@components/Header";
 
@@ -10,7 +11,6 @@ import routes from '@routes/routesConfig.js';
 import styles from './App.module.css';
 
 const App = () => {
-  console.log('in app')
   return (
     <>
     <BrowserRouter>
@@ -21,6 +21,7 @@ const App = () => {
           <Route path={routes.people} element={<PeoplePage />} />
           <Route path={routes.person} element={<PersonPage />} />
           <Route path={routes.notFound} element={<NotFoundPage />} />
+          <Route path={routes.favorites} element={<FavoritesPage />} />
         </Routes>
       </div>
     </BrowserRouter>

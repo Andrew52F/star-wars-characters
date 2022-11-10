@@ -3,6 +3,7 @@ const routes = {
   people: '/people',
   person: '/person/:id',
   notFound: '*',
+  favorites: '/favorites'
 }
 
 export default routes;

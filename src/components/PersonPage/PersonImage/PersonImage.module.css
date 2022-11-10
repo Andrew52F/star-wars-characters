@@ -1,7 +1,7 @@
 .container {
   width: 250px;
   height: 350px;
-
+  position: relative;
 }
 .image {
   width: 100%;
@@ -9,5 +9,15 @@
   border-radius: var(--border-radius-medium);
   object-fit: cover;
   object-position: center center;
-
+}
+.favorite {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 2px #000)
 }

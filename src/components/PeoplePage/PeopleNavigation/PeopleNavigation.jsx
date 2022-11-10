@@ -8,7 +8,6 @@ import styles from './PeopleNavigation.module.css';
 
 
 const PeopleNavigation = ({ getResource, prevPage, nextPage, currPageId}) => {
-  console.log(currPageId)
   const handleClickNext = () => getResource(nextPage);
   const handleClickPrev = () => getResource(prevPage);
 

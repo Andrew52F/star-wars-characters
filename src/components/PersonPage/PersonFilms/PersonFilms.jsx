@@ -5,7 +5,6 @@ import { fetchArrayOfUrls } from '@utils/network';
 import styles from './PersonFilms.module.css';
 
 const PersonFilms = ({filmsList}) => {
-  console.log('films :', filmsList)
   const [films, setFilms] = useState([])
   useEffect(() => {
     (async() => {

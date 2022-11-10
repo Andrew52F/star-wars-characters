@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Suspense } from 'react';
+import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types';
 import PersonInfo from '@components/PersonPage/PersonInfo';
@@ -14,14 +15,21 @@ import styles from './PersonPage.module.css';
 const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
 const PersonPage = ({ setApiError }) => {
+  const [ personId, setPersonId ] = useState(null);
   const [ personName, setPersonName ] = useState(null);
   const [personImgUrl, setPersonImgUrl] = useState(null);
   const [personInfo, setPersonInfo] = useState(null);
   const [filmsList, setFilmsList] = useState([]);
+  const [ isFavorite, setIsFavorite ] = useState(false);
+  const storeData = useSelector(store => store.favoriteReducer);
   const { id } = useParams();
   useEffect(() => {
     (async () => {
       const data = await getApiData(`${PERSON_DATA}/${id}/`);
+
+      setPersonId(id);
+      storeData[id] ? setIsFavorite(true) : setIsFavorite(false);
+
       if (data) { 
         setPersonInfo([
           {title: 'Height', value: data.height},
@@ -35,7 +43,7 @@ const PersonPage = ({ setApiError }) => {
         data.films.length && setFilmsList(data.films);
         setPersonName(data.name);
         setPersonImgUrl(getPersonImgUrl(id));
-        setApiError(false); 
+        setApiError(false);
       } else {
         setApiError(true);
       }
@@ -44,11 +52,10 @@ const PersonPage = ({ setApiError }) => {
   return (
     <>
     <LinkBack />
-    <UiLoader />
     <div className={styles.wrapper}>
       <span className={styles.person__name}>{personName}</span>
       <div className={styles.container}>
-        {personImgUrl && (<PersonImage  name={personName} imgUrl={personImgUrl} />)}
+        {personImgUrl && (<PersonImage  id={personId} name={personName} imgUrl={personImgUrl} isFavorite={isFavorite} setIsFavorite={setIsFavorite} />)}
         {personInfo && (<PersonInfo info={personInfo} />)}
         {filmsList.length && (
           <Suspense fallback={<UiLoader theme={'light'} shadow />}>
