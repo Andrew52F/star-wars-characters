@@ -40,7 +40,7 @@ const ChooseSide = () => {
   const themesItems = [
     {themeName: THEME_LIGHT, text: 'Light Side', img: blueSaber, classes: styles.item__light},
     {themeName: THEME_DARK, text: 'Dark Side', img: redSaber, classes: styles.item__dark},
-    {themeName: THEME_NEUTRAL, text: 'Neutral Side', img: falcon, classes: styles.item__neutral},
+    {themeName: THEME_NEUTRAL, text: 'Neutral', img: falcon, classes: styles.item__neutral},
   ]
   return (
     <>

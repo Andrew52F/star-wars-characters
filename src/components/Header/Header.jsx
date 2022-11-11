@@ -15,7 +15,6 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const { theme } = useTheme();
-  console.log(theme);
   const [icon, setIcon] = useState(null);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const Header = () => {
           setIcon(droidImg);
           break;
           default: 
-          console.error('Header Img: unknown theme')
+          
       }
   },[theme])
 
@@ -40,6 +39,7 @@ const Header = () => {
       <ul className={styles.list__container}>
         <li><NavLink to={routes.home}>Home</NavLink></li>
         <li><NavLink to={`${routes.people}?page=1`}>People</NavLink></li>
+        <li><NavLink to={routes.search}>Search</NavLink></li>
         <li><NavLink to={routes.notFound}>Not found</NavLink></li>
       </ul>
       <Favorite />

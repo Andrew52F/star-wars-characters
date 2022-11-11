@@ -4,6 +4,7 @@ import HomePage from "@containers/HomePage";
 import NotFoundPage from "@containers/NotFoundPage";
 import PersonPage from "@containers/PersonPage";
 import FavoritesPage from "@containers/FavoritesPage";
+import SearchPage from "@containers/SearchPage";
 
 import Header from "@components/Header";
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route path={routes.person} element={<PersonPage />} />
           <Route path={routes.notFound} element={<NotFoundPage />} />
           <Route path={routes.favorites} element={<FavoritesPage />} />
+          <Route path={routes.search} element={<SearchPage />} />
         </Routes>
       </div>
     </BrowserRouter>

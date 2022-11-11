@@ -1,13 +1,15 @@
 export const HTTPS = 'https://';
-export const HTTP = 'http://';
 
 //swapi
 export const SWAPI_BASE_URL = 'swapi.dev/api/';
 export const SWAPI_PEOPLE = 'people';
 // export const SWAPI_RERSON = 'person';
 export const SWAPI_PARAM_PAGE = '/?page='
+export const SWAPI_PARAM_SEARCH = '/?search='
 export const PEOPLE_LIST = HTTPS+SWAPI_BASE_URL+SWAPI_PEOPLE+SWAPI_PARAM_PAGE;
 export const PERSON_DATA = HTTPS+SWAPI_BASE_URL+SWAPI_PEOPLE;
+export const PERSON_SEARCH = HTTPS+SWAPI_BASE_URL+SWAPI_PEOPLE+SWAPI_PARAM_SEARCH;
+
 //visualguide
 const GUIDE_IMG = 'starwars-visualguide.com/assets/img/';
 const GUIDE_PEOPLE = 'characters';

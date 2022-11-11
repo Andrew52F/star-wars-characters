@@ -1,9 +1,23 @@
 :root {
   --font-size-small: 14px;
+  --font-size-medium: 16px;
   --font-bold: 600;
   --font-family: sans-serif;
+
   --transition: 0.4s;
+
   --color-white: #FFF;
   --color-black: #000;
   --color-gray: #9c9c9c;
+  --color-lightgray: #dfe2df;
+  --color-blue: #6a83fb;
 } 
+
+
+img {
+  display: block;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
