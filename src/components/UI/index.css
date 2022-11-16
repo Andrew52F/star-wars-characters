@@ -11,6 +11,11 @@
   --color-gray: #9c9c9c;
   --color-lightgray: #dfe2df;
   --color-blue: #6a83fb;
+
+  --text-shadow-blue:
+  0 0 2px var(--color-white),
+  0 0 40px var(--color-blue);
+
 } 
 
 

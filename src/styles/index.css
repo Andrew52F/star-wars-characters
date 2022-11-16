@@ -7,6 +7,9 @@
   --color-violet: #ae72c2;
   --color-red: #f75d83;
 
+  --color-gray: #9c9c9c;
+  --color-light-gray: #dfe2df;
+
   --spacing-verysmall: 5px;
   --spacing-small: 10px;
   --spacing-medium: 20px;
@@ -69,6 +72,9 @@ body {
 }
 img {
   display: block;
+}
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
 code {

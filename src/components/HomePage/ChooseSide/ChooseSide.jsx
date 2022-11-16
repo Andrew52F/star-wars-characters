@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 import { setLocalStorage } from '@utils/localStorage';
 import styles from './ChooseSide.module.css';
 import {
@@ -37,10 +38,11 @@ ChooseSideItem.propTypes = {
 
 
 const ChooseSide = () => {
+  const { t } = useTranslation();
   const themesItems = [
-    {themeName: THEME_LIGHT, text: 'Light Side', img: blueSaber, classes: styles.item__light},
-    {themeName: THEME_DARK, text: 'Dark Side', img: redSaber, classes: styles.item__dark},
-    {themeName: THEME_NEUTRAL, text: 'Neutral', img: falcon, classes: styles.item__neutral},
+    {themeName: THEME_LIGHT, text: t(`chooseSide.${THEME_LIGHT}`) , img: blueSaber, classes: styles.item__light},
+    {themeName: THEME_DARK, text: t(`chooseSide.${THEME_DARK}`), img: redSaber, classes: styles.item__dark},
+    {themeName: THEME_NEUTRAL, text: t(`chooseSide.${THEME_NEUTRAL}`), img: falcon, classes: styles.item__neutral},
   ]
   return (
     <>

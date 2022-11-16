@@ -37,5 +37,15 @@
   margin-right: var(--spacing-large);
   object-fit: cover;
   object-position: center center;
-  
+}
+.icons__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+}
+.icons__container > * {
+  margin-left: 10px;
 }

@@ -14,6 +14,7 @@ module.exports = function override(config) {
     '@hooks': './src/hooks',
     '@store': './src/store',
     '@context': './src/context',
+    '@localization': './src/localization',
 
   }
   alias(options)(config)

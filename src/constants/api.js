@@ -1,7 +1,7 @@
 export const HTTPS = 'https://';
 
 //swapi
-export const SWAPI_BASE_URL = 'swapi.dev/api/';
+export const SWAPI_BASE_URL = 'swapi.py4e.com/api/';
 export const SWAPI_PEOPLE = 'people';
 // export const SWAPI_RERSON = 'person';
 export const SWAPI_PARAM_PAGE = '/?page='

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import PersonInfo from '@components/PersonPage/PersonInfo';
 import PersonImage from '@components/PersonPage/PersonImage';
@@ -15,6 +16,7 @@ import styles from './PersonPage.module.css';
 const PersonFilms = React.lazy(() => import('@components/PersonPage/PersonFilms'));
 
 const PersonPage = ({ setApiError }) => {
+  const { t } = useTranslation();
   const [ personId, setPersonId ] = useState(null);
   const [ personName, setPersonName ] = useState(null);
   const [personImgUrl, setPersonImgUrl] = useState(null);
@@ -32,13 +34,13 @@ const PersonPage = ({ setApiError }) => {
 
       if (data) { 
         setPersonInfo([
-          {title: 'Height', value: data.height},
-          {title: 'Mass', value: data.mass},
-          {title: 'Gender', value: data.gender},
-          {title: 'Birth year', value: data.birth_year},
-          {title: 'Hair color', value: data.hair_color}, 
-          {title: 'Skin color', value: data.skin_color},
-          {title: 'Eye color', value: data.eye_color}
+          {title: t('personInfo.height'), value: data.height},
+          {title: t('personInfo.mass'), value: data.mass},
+          {title: t('personInfo.gender'), value: data.gender},
+          {title: t('personInfo.birthYear'), value: data.birth_year},
+          {title: t('personInfo.hairColor'), value: data.hair_color}, 
+          {title: t('personInfo.skinColor'), value: data.skin_color},
+          {title: t('personInfo.eyeColor'), value: data.eye_color}
         ]); 
         data.films.length && setFilmsList(data.films);
         setPersonName(data.name);

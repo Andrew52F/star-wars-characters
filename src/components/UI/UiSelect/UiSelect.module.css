@@ -1,0 +1,13 @@
+.language__select {
+  display: block;
+  padding: 7px 10px;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-bold);
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-white);
+  text-shadow: var(--text-shadow-blue);
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: var(--transition);
+}

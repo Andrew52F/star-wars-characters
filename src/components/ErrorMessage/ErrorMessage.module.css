@@ -1,9 +1,14 @@
+.container {
+  margin: 0 auto;
+  width: 200px;
+}
 .text {
   width: 600px;
   margin: auto;
   margin-top: 100px;
   line-height: 1.7;
   text-align: center;
+  white-space: pre-line;
   font-size: var(--font-size-header);
   color: var(--color-yellow);
   text-shadow: 0 0 2px var(--color-white);

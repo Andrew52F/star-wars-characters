@@ -1,9 +1,11 @@
 import styles from './LinkBack.module.css';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import iconBack from './img/arrow-back.svg'
 
 const LinkBack = () => {
-  const navigate = useNavigate()
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   const handleBack = (e) => {
     e.preventDefault();
     navigate(-1)
@@ -14,8 +16,8 @@ const LinkBack = () => {
         onClick={handleBack}
         className={styles.link}
       >
-        <img className={styles.link__img} src={iconBack} alt="go back" />
-        <span>Go back</span>
+        <img className={styles.link__img} src={iconBack} alt={t('goBackLink')} />
+        <span>{t('goBackLink')}</span>
       </a>
     </>
   )

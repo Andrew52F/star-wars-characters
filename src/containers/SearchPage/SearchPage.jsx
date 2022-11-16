@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { debounce } from 'lodash';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import { getPersonId, getPersonImgUrl } from '@services/getPeopleData';
 import { PERSON_SEARCH } from '@constants/api';
 import { getApiData } from '@utils/network';
@@ -11,6 +12,7 @@ import { withErrorApi } from '@components/hocs/withErrorApi'
 import styles from './SearchPage.module.css';
 
 const SearchPage = ({setApiError}) => {
+  const { t } = useTranslation()
   const [ searchInputValue, setSearchInputValue ] = useState('');
   const [ people, setPeople ] = useState([]);
 
@@ -42,8 +44,8 @@ const SearchPage = ({setApiError}) => {
 
   return (
     <>
-    <h1 className='header__text'>Search</h1>
-    <UiInput value={searchInputValue} handleInputChange={handleInputChange} placeholder='Type characters name' classes={styles.search__input}/>
+    <h1 className='header__text'>{t('headerText.search')}</h1>
+    <UiInput value={searchInputValue} handleInputChange={handleInputChange} placeholder={t('searchInputPlaceholder')} classes={styles.search__input}/>
     <SearchList people={people} />
     </>
   )
