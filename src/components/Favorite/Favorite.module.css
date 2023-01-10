@@ -1,7 +1,6 @@
 .container {
   width: 35px;
   height: 35px;
-  margin-left: auto;
   position: relative;
   flex-shrink: 0;
 }

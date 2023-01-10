@@ -11,7 +11,6 @@ import { getApiData } from '@utils/network'
 import { getPersonId, getPersonImgUrl, getPeoplePageId } from '@services/getPeopleData';
 import { useQueryParams } from '@hooks/useQueryParams';
 
-import styles from './PeoplePage.module.css';
 
 const PeoplePage = ({ setApiError }) => {
   const [people, setPeople] = useState(null);
@@ -49,9 +48,7 @@ const PeoplePage = ({ setApiError }) => {
         nextPage={nextPage}
         currPageId={currPageId}
       />
-      <ul>
-        {people && <PeopleList people={people} />}
-      </ul>
+      {people && <PeopleList people={people} />}
       </>
   )
 }

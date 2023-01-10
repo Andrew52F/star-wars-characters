@@ -19,5 +19,6 @@ margin-top: 45px;
   border-left: 5px solid var(--color-violet);
   display: flex;
   flex-wrap: wrap;
-  padding: var(--spacing-medium);
+  gap: var(--spacing-medium);
+  padding: var(--spacing-medium) 0 0 var(--spacing-medium);
 }

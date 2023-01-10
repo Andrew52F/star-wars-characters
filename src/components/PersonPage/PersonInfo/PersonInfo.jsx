@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './PersonInfo.module.css';
 
 const PersonInfo = ({ info }) => {
+  
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list__container}>

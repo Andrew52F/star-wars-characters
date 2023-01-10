@@ -1,5 +1,9 @@
 .search__input {
   margin-top: 30px;
   margin-bottom: 50px;
-  
+}
+@media screen and (max-width: 540px) {
+  .search__input {
+    width: 100%;
+  }
 }

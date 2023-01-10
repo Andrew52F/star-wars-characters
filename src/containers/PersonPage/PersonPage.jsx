@@ -50,7 +50,7 @@ const PersonPage = ({ setApiError }) => {
         setApiError(true);
       }
     })()
-  },[id])
+  },[id, setApiError, storeData, t])
   return (
     <>
     <LinkBack />

@@ -2,13 +2,13 @@
   --border-radius: 3px;
   --border: 3px;
   --clear-width: 35px;
-
+  width: 300px;
   position: relative;
   display: inline-flex;
 }
 
 .input {
-  min-width: 300px;
+  width: 100%;
   padding: 10px 15px;
   border: var(--border) solid var(--color-lightgray);
   border-radius: var(--border-radius);

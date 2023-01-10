@@ -34,3 +34,8 @@
     column-count: 2;
   }
 }
+@media screen and (max-width: 540px) {
+  .list__container {
+    column-count: 1;
+  }
+}

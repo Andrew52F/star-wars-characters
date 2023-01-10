@@ -6,6 +6,7 @@
   --color-blue: #6a83fb;
   --color-violet: #ae72c2;
   --color-red: #f75d83;
+  --color-opaque: #020308;
 
   --color-gray: #9c9c9c;
   --color-light-gray: #dfe2df;
@@ -52,6 +53,14 @@
   --theme-light-bgimage: linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
   --theme-dark-bgimage: linear-gradient(to right bottom, #000001, #170e1b, #2f1326, #4a1425, #601a1a);
   --theme-neutral-bgimage: url('@static/bgImage.jpeg');
+
+
+  --theme-default-menu-background: var(--theme-neutral-menu-background);
+
+  --theme-light-menu-background: #BDC8BD;
+  --theme-dark-menu-background: #A74043;
+  --theme-neutral-menu-background: #ADAD27;
+
 
 
 

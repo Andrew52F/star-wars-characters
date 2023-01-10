@@ -14,7 +14,7 @@ import falcon from './img/falcon.jpg';
 
 
 const ChooseSideItem = ({img, text, themeName, classes}) => {
-  const {theme, setTheme} = useTheme();
+  const {setTheme} = useTheme();
   return (
     <div
     className={cn(styles.item, classes)} 
